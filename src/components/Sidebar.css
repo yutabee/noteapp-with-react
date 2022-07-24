@@ -47,3 +47,7 @@ button{
 .app-sidebar-note:hover{
     background-color: rgba(71, 130, 145, 0.701);
 }
+
+.app-sidebar-note.active{
+    background-color: rgba(71, 130, 145, 0.701);
+}
