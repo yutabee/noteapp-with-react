@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactMarkdown from 'react-markdown';
 import './Main.css'
 
 export const Main = ({ activeNote ,onUpdateNote}) => {
@@ -20,6 +21,7 @@ export const Main = ({ activeNote ,onUpdateNote}) => {
         <div className="app-main-note-edit">
           <input
             id='title'
+            placeholder='ノートのタイトルを記入'
             type="text"
             value={activeNote.title}
             onChange={(e)=>onEditNote('title', e.target.value)}
@@ -32,8 +34,10 @@ export const Main = ({ activeNote ,onUpdateNote}) => {
           ></textarea>
         </div>  
         <div className="app-main-note-preview">
-          <h1 className="preview-title">{activeNote.title}</h1>
-          <div className="markdown-preview">{activeNote.content}</div>
+          <h1 className="preview-title">{activeNote.title}</h1> 
+            <ReactMarkdown >
+              {activeNote.content}
+            </ReactMarkdown>
         </div> 
       </div>
     </>
